@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.interest.dao.UserGiteeDao">
+	<resultMap id="qqUserMap" type="com.interest.model.entity.UserGeeEntity">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="login" property="login" />
+		<result column="avatar_url" property="avatarUrl" />
+		<result column="html_url" property="htmlUrl" />
+		<result column="userid" property="userId" />
+	</resultMap>
+
+	<insert id="insertEntity" parameterType="com.interest.model.entity.UserGeeEntity">
+		insert into user_gitee (`id`, avatar_url, login, html_url, `name`, userid)
+		values (#{id}, #{avatarUrl}, #{login}, #{htmlUrl}, #{name}, #{userId})
+	</insert>
+</mapper>
